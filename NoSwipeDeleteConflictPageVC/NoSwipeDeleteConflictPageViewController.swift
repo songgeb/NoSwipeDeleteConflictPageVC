@@ -399,15 +399,6 @@ extension NoSwipeDeleteConflictPageViewController {
 
 // MARK: - GestureRecognizer Delegate
 extension NoSwipeDeleteConflictPageViewController: UIGestureRecognizerDelegate {
-    
-  func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-    guard let displayView = displayView else { return true }
-    if otherGestureRecognizer.view == findTableViewRecursively(displayView) {
-      return false
-    }
-    
-    return true
-  }
   
   func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
     guard let panner = gestureRecognizer as? UIPanGestureRecognizer else {
